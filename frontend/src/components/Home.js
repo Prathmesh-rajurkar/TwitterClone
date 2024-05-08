@@ -5,7 +5,7 @@ import Feed from './Feed'
 
 function Home() {
   return (
-    <div className='flex justify-between w-[80%] mx-auto'>
+    <div className='flex justify-between w-[83.5%] mx-auto'>
         <LeftSideBar/>
         <Feed/>
         <RightSideBar/>

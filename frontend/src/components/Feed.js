@@ -7,9 +7,7 @@ function Feed() {
     <div className='w-[50%] border border-gray-200'>
       <CreatePost/>
       <Tweet/>
-      <Tweet/>
-      <Tweet/>
-      <Tweet/>
+      
 
     </div> 
   )

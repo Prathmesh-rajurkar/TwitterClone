@@ -5,7 +5,7 @@ import { CiBookmark, CiChat1, CiHeart } from 'react-icons/ci'
 
 function Tweet() {
     return (
-        <div>
+        <div className='border-b border-gray-200'>
             <div>
                 <div className='flex p-4'>
                     <Avatar facebookId="100008343750912"  size="40" round={true} />

@@ -4,7 +4,7 @@ import { CiBellOn, CiBookmark, CiCircleMore, CiHome, CiLogout, CiUser } from "re
 import { CiSearch } from "react-icons/ci";
 function LeftSideBar() {
     return (
-        <div className='w-[20%]'>
+        <div className='w-[25%] p-2'>
             <div>
                 <div>
                     {/* <img width={"30px"} src="https://i.pinimg.com/736x/99/65/5e/99655e9fe24eb0a7ea38de683cedb735.jpg" alt="twitter-logo" /> */}
@@ -67,7 +67,7 @@ function LeftSideBar() {
                             Logout
                         </h1>
                     </div>
-                    <button className='px-4 py-2 my-10 h-12 w-200 border-none text-md bg-[#1D9BF0] w-full rounded-full text-white font-bold'>Post</button>
+                    <button className='px-4 py-2 my-10 h-12 border-none text-md bg-[#1D9BF0] w-full rounded-full text-white font-bold'>Post</button>
                 </div>
             </div>
         </div>
