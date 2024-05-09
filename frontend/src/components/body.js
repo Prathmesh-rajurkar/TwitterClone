@@ -1,10 +1,24 @@
 import React from 'react'
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
-function body() {
+import Home from './Home'
+import Login from './Login'
+import Feed from './Feed'
+import Profile from './Profile'
+function Body() {
     const appRouter = createBrowserRouter([
         {
-            path:"/home",
-            element:<Home/>
+            path:"/",
+            element:<Home/>,
+            children:[
+                {
+                    path:"/",
+                    element:<Feed/>
+                },
+                {
+                    path:"/profile",
+                    element:<Profile/>
+                }
+            ]
         },
         {
             path:"/login",
@@ -18,4 +32,4 @@ function body() {
   )
 }
 
-export default body
+export default Body

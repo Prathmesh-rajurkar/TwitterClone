@@ -14,11 +14,11 @@ function RightSideBar() {
         <div className='flex items-center justify-between'>
           <div className='flex items-center'>
             <div>
-              <Avatar src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg' size="40" round={true} />
+              <Avatar src='https://image-cdn.essentiallysports.com/wp-content/uploads/Alexandra-Botez.jpeg' size="40" round={true} />
             </div>
             <div className='ml-2'>
-              <h1 className='font-bold'>Sasha</h1>
-              <p className='text-sm text-gray-500 '>@sasha2004</p>
+              <h1 className='font-bold'>Alexandra Botez</h1>
+              <p className='text-sm text-gray-500 '>@alexb1650</p>
             </div>
           </div>
           <div>
@@ -34,3 +34,4 @@ function RightSideBar() {
 }
 
 export default RightSideBar
+// https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg
