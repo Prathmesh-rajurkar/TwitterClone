@@ -5,21 +5,17 @@ const tweetSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    like:{
-        type:Array,
-        default:[],
-    },
     userID:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User",
     },
-    bookmarks:{
+    like:{
         type:Array,
         default:[],
     },
-    password:{
-        type:String,
-        required:true,
+    bookmarks:{
+        type:Array,
+        default:[],
     },
     followers:{
         type:Array,
