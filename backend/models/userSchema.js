@@ -18,7 +18,19 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String,
         required:true
-    }
+    },
+    bookmarks:{
+        type:Array,
+        default:[],
+    },
+    followers:{
+        type:Array,
+        default:[],
+    },
+    following:{
+        type:Array,
+        default:[],
+    },
 },{timestamps:true})
 
 export const User = mongoose.model('User',userSchema)

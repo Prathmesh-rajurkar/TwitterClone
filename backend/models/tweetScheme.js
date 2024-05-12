@@ -13,17 +13,9 @@ const tweetSchema = new mongoose.Schema({
         type:Array,
         default:[],
     },
-    bookmarks:{
+    userDetails:{
         type:Array,
-        default:[],
-    },
-    followers:{
-        type:Array,
-        default:[],
-    },
-    following:{
-        type:Array,
-        default:[],
+        default:[]
     },
 },{timestamps:true})
 
