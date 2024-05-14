@@ -74,3 +74,19 @@ export const getAllTweets = async (req,res) =>{
         console.log(error);
     }
 }
+
+export const getFollowingTweet = async (req,res) => {
+    try {
+        const id = req.params.id
+        const loggedInUser = await User.findById(id)
+        // const loggedInUserTweets = await Tweet.find({userID:id});
+        const followingUserTweets = await Promise.all(loggedInUser.following.map((otherUserId)=>{
+            return Tweet.find({userID:otherUserId})
+        }))
+        return res.status(200).json({
+            tweets:[].concat(...followingUserTweets)
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
