@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
 import { BsTwitterX } from 'react-icons/bs'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { USER_API_END_POINT } from '../utils/constant';
 import { ToastContainer,toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
+import {useNavigate} from "react-router-dom";
+
+
 function Login() {
   const [isLogin, setIsLogin] = useState(false);
   const [name, setName] = useState("")
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
 
   const loginSignupHandler = () => {
@@ -27,9 +31,10 @@ function Login() {
           },
           withCredentials: true
         });
-        console.log(res.data)
+        // console.log(res.data)
         if (res.data.success) {
           toast.success(res.data.message);
+          navigate("/");
         }
       } catch (error) {
         console.log(error)
