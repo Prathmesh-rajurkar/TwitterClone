@@ -6,7 +6,8 @@ import { USER_API_END_POINT } from '../utils/constant';
 import { ToastContainer,toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
 import {useNavigate} from "react-router-dom";
-
+import { useDispatch } from 'react-redux';
+import { getUser } from '../redux/userSlice';
 
 function Login() {
   const [isLogin, setIsLogin] = useState(false);
@@ -15,7 +16,7 @@ function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
 
   const loginSignupHandler = () => {
     setIsLogin(!isLogin)
@@ -32,6 +33,7 @@ function Login() {
           withCredentials: true
         });
         // console.log(res.data)
+        dispatch(getUser(res?.data?.user))
         if (res.data.success) {
           toast.success(res.data.message);
           navigate("/");

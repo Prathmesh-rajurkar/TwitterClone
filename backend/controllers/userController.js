@@ -70,6 +70,7 @@ export const Login = async (req,res) =>{
         const token = await jwt.sign(tokenData,process.env.TOKEN_SECRET,{expiresIn:"1d"})
         return res.status(201).cookie("token",token,{expiresIn:"1d",httpOnly:true}).json({
             message:`Welcome Back ${user.name}`,
+            user,
             success:true, 
         })
 
@@ -113,9 +114,10 @@ export const getMyProfile = async (req,res) => {
         const id = req.params.id;
         const user = await User.findById(id).select("-password")
         return res.status(200).json({
-            user
+            user,
         })
     } catch (error) {
+        console.log("hello2");
         console.log(error)
     }
 }
