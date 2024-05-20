@@ -89,7 +89,7 @@ function Login() {
               <h1>{isLogin ? "Do not have an account?" : "Already have an account? "}<span className='cursor-pointer font-bold text-blue-500' onClick={loginSignupHandler}>{isLogin ? "Create Account" : "Login"}</span></h1>
             }
           </form>
-          <ToastContainer />
+          
         </div>
       </div>
     </div>
