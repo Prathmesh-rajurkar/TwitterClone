@@ -1,14 +1,15 @@
 import React from 'react'
 import Avatar from 'react-avatar'
 import { IoArrowBackOutline } from 'react-icons/io5'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import useGetProfile from '../hooks/useGetProfile'
 
 
 function Profile() {
-    const {user}= useSelector(store=>store.user);
-
+    const { user,profile } = useSelector(store => store.user);
+    console.log(user._id)
+    const { id } = useParams();
     useGetProfile(user?._id)
     return (
         <div className='w-[50%] border border-gray-200'>
@@ -18,7 +19,7 @@ function Profile() {
                         <IoArrowBackOutline size='20px' />
                     </Link>
                     <div>
-                        <h1 className='font-bold text-lg'>Prathmesh Rajurkar</h1>
+                        <h1 className='font-bold text-lg'>{user.name}</h1>
                         <p className='text-sm text-gray-400'>10 posts</p>
                     </div>
                 </div>
@@ -30,8 +31,8 @@ function Profile() {
                     <button className='px-4 py-1 rounded-full text-right border border-gray-400'>Edit Profile</button>
                 </div>
                 <div className='m-4'>
-                    <h1 className='font-bold text-xl'>Prathmesh</h1>
-                    <p>@prathmsh1909</p>
+                    <h1 className='font-bold text-xl'>{user?.name}</h1>
+                    <p>{user.username}</p>
                 </div>
                 <div className='m-4'>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque reprehenderit assumenda eos. Itaque numquam quia quod consequatur optio placeat animi, fuga mollitia repellendus perspiciatis maiores.</p>

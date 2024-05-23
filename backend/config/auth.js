@@ -17,7 +17,7 @@ const isAuthenticated = async (req,res,next) => {
                 success:false,
             })
         }
-        const decode = await jwt.verify(token,process.env.TOKEN_SECRET);
+        const decode = jwt.verify(token, process.env.TOKEN_SECRET);
         console.log(decode);
         req.user = decode.userID;
         next();
