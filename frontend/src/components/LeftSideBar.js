@@ -2,9 +2,12 @@ import React from 'react'
 import { BsTwitterX } from "react-icons/bs";
 import { CiBellOn, CiBookmark, CiCircleMore, CiHome, CiLogout, CiUser } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function LeftSideBar() {
+    const {user} = useSelector(state=>state.user)
+
     return (
         <div className='w-[20%] p-2'>
             <div>
@@ -37,7 +40,7 @@ function LeftSideBar() {
                             Notification
                         </h1>
                     </div>
-                    <Link to="/profile" className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 rounded-full hover:cursor-pointer'>
+                    <Link to={`/profile/${user?._id}`} className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 rounded-full hover:cursor-pointer'>
                         <div>
                             <CiUser size="24px" />
                         </div>

@@ -8,9 +8,10 @@ import useGetProfile from '../hooks/useGetProfile'
 
 function Profile() {
     const { user,profile } = useSelector(store => store.user);
+    // const {id} = useParams();
     console.log(user._id)
     const { id } = useParams();
-    useGetProfile(user?._id)
+    useGetProfile(id)
     return (
         <div className='w-[50%] border border-gray-200'>
             <div className=''>
